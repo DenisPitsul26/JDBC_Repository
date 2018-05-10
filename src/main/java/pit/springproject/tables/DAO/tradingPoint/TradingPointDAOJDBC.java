@@ -20,6 +20,7 @@ public class TradingPointDAOJDBC implements ITradingPointDAOJDBC{
     DataStorageJDBC dataStorage;
     private List<TradingPoint> list = new ArrayList<>();
 
+
     @Override
     public TradingPoint insertTradingPoint(TradingPoint tradingPoint) {
         try {
