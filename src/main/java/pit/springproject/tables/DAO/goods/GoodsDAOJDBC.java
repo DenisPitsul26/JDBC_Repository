@@ -35,6 +35,7 @@ public class GoodsDAOJDBC implements IGoodsDAOJDBC{
     @Override
     public Goods getGoods(int id) throws SQLException {
         ResultSet rs = dataStorage.executeQuery("SELECT * FROM goods where id = "+id);
+        rs.next();
         Goods goods = new Goods(rs.getInt("id"), rs.getString("name_of_goods"));
         return goods;
     }
@@ -42,7 +43,9 @@ public class GoodsDAOJDBC implements IGoodsDAOJDBC{
     @Override
     public Goods updateGoods(Goods goods) throws SQLException {
         try {
-            String query = "update goods set id="+goods.getId()+",name_of_goods = '" + goods.getNameOfGoods()+"' where id ="+ goods.getId();
+            String query = "update goods set id="+goods.getId()+
+                    ",name_of_goods = '" + goods.getNameOfGoods()+
+                    "' where id ="+ goods.getId();
             dataStorage.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();

@@ -70,10 +70,6 @@ public class SoldGoodsDAOJDBC implements ISoldGoodsDAOJDBC{
                             ),
                             new Seller(
                                     rs.getInt("id"),
-                                    new TypeOfTradingPoint(
-                                            rs.getInt("id"),
-                                            rs.getString("type_of_type_of_trading_point")
-                                    ),
                                     new TradingPoint(
                                             rs.getInt("id"),
                                             new TypeOfTradingPoint(
@@ -89,7 +85,7 @@ public class SoldGoodsDAOJDBC implements ISoldGoodsDAOJDBC{
                                     ),
                                     rs.getString("name_of_seller"),
                                     rs.getDouble("sallary"),
-                                    rs.getDate("date_start_of_work")
+                                    rs.getDate("date_start_of_work").toLocalDate()
                             ),
                             new Buyer(
                                     rs.getInt("id"),
@@ -97,10 +93,6 @@ public class SoldGoodsDAOJDBC implements ISoldGoodsDAOJDBC{
                             ),
                             new GoodsOfTradingPoint(
                                     rs.getInt("id"),
-                                    new TypeOfTradingPoint(
-                                            rs.getInt("id"),
-                                            rs.getString("type_of_type_of_trading_point")
-                                    ),
                                     new TradingPoint(
                                             rs.getInt("id"),
                                             new TypeOfTradingPoint(

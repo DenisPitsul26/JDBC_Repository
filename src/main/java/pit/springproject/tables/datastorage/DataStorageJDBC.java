@@ -15,6 +15,22 @@ public class DataStorageJDBC {
     Connection con;
     Statement statement;
 
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
+
+    public Statement getStatement() {
+        return statement;
+    }
+
+    public void setStatement(Statement statement) {
+        this.statement = statement;
+    }
+
     @PostConstruct
     public void init() throws SQLException {
         con = DriverManager.getConnection(url,login,password);

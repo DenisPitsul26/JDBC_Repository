@@ -20,7 +20,7 @@ public class RequestController {
     }
 
     @PostMapping("/request/insert")
-    Request insertRequest(@RequestBody Request request) {
+    Request insertRequest(@RequestBody Request request) throws SQLException {
         return requestService.insertRequest(request);
     }
 
@@ -31,8 +31,7 @@ public class RequestController {
     }
 
     @GetMapping("/request/get")
-    Request getRequestById(@RequestParam("id") int id)
-    {
+    Request getRequestById(@RequestParam("id") int id) throws SQLException {
         return requestService.getRequest(id);
     }
 

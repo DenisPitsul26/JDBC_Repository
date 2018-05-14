@@ -8,6 +8,7 @@ import pit.springproject.tables.model.Goods;
 import pit.springproject.tables.model.TradingPoint;
 import pit.springproject.tables.model.TypeOfTradingPoint;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public class TradingPointDAOJDBC implements ITradingPointDAOJDBC{
     @Autowired
     DataStorageJDBC dataStorage;
     private List<TradingPoint> list = new ArrayList<>();
-
 
     @Override
     public TradingPoint insertTradingPoint(TradingPoint tradingPoint) {
@@ -42,9 +42,32 @@ public class TradingPointDAOJDBC implements ITradingPointDAOJDBC{
 
     @Override
     public TradingPoint getTradingPoint(int id) throws SQLException {
+        /*//String query = ""
         ResultSet rs = dataStorage.executeQuery("SELECT * FROM trading_point " +
                         "JOIN type_of_trading_point ON trading_point.type_of_trading_point_id = type_of_trading_point.id " +
-                        "where id = "+id);
+                        "where trading_point.id = "+id);
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(query);
+        statement.setInt(1,id);
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        TradingPoint tradingPoint = new TradingPoint(
+                rs.getInt("id"),
+                new TypeOfTradingPoint(
+                        rs.getInt("id"),
+                        rs.getString("type_of_type_of_trading_point")
+                ),
+                rs.getString("name_of_trading_point"),
+                rs.getInt("number_of_halls"),
+                rs.getInt("size_of_the_trading_point"),
+                rs.getDouble("lease_payments"),
+                rs.getDouble("utilities"),
+                rs.getInt("number_of_counters"));
+        return tradingPoint;*/
+        String query = "SELECT * FROM trading_point JOIN type_of_trading_point ON trading_point.type_of_trading_point_id = type_of_trading_point.id where trading_point.id=?";
+        PreparedStatement statement = dataStorage.getCon().prepareStatement(query);
+        statement.setInt(1,id);
+        ResultSet rs = statement.executeQuery();
+        rs.next();
         TradingPoint tradingPoint = new TradingPoint(
                 rs.getInt("id"),
                 new TypeOfTradingPoint(
@@ -77,6 +100,7 @@ public class TradingPointDAOJDBC implements ITradingPointDAOJDBC{
             e.printStackTrace();
         }
         return null;
+
     }
 
     @Override

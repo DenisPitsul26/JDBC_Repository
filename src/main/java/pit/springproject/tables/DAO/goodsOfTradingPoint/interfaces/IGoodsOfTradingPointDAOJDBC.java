@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface IGoodsOfTradingPointDAOJDBC {
     public GoodsOfTradingPoint insertGoodsOfTradingPoint(
-            GoodsOfTradingPoint goodsOfTradingPoint);
+            GoodsOfTradingPoint goodsOfTradingPoint) throws SQLException;
 
-    public GoodsOfTradingPoint getGoodsOfTradingPoint(int id);
+    public GoodsOfTradingPoint getGoodsOfTradingPoint(int id) throws SQLException;
 
     public GoodsOfTradingPoint updateGoodsOfTradingPoint(
             GoodsOfTradingPoint goodsOfTradingPoint) throws SQLException;
 
-    public GoodsOfTradingPoint deleteGoodsOfTradingPoint(int id) throws SQLException;
+    public void deleteGoodsOfTradingPoint(int id) throws SQLException;
 
     public List<GoodsOfTradingPoint> getAll() throws SQLException;
 }

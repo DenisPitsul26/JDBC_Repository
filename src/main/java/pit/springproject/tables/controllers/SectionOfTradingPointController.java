@@ -20,7 +20,7 @@ public class SectionOfTradingPointController {
     }
 
     @PostMapping("/section_of_trading_point/insert")
-    SectionOfTradingPoint insertSectionOfTradingPoint(@RequestBody SectionOfTradingPoint sectionOfTradingPoint) {
+    SectionOfTradingPoint insertSectionOfTradingPoint(@RequestBody SectionOfTradingPoint sectionOfTradingPoint) throws SQLException {
         return sectionOfTradingPointService.insertSectionOfTradingPoint(sectionOfTradingPoint);
     }
 

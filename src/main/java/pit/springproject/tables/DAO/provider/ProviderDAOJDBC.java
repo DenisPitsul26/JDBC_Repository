@@ -35,6 +35,7 @@ public class ProviderDAOJDBC implements IProviderDAOJDBC{
     @Override
     public Provider getProvider(int id) throws SQLException{
         ResultSet rs = dataStorageJDBC.executeQuery("SELECT * FROM provider where id = "+id);
+        rs.next();
         Provider provider = new Provider(
                 rs.getInt("id"),
                 rs.getString("name_of_provider"),

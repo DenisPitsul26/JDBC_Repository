@@ -1,20 +1,17 @@
 package pit.springproject.tables.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Seller {
     private int id;
-    private TypeOfTradingPoint typeOfTradingPoint;
     private TradingPoint tradingPoint;
     private String nameOfSeller;
     private double sallary;
-    private Date dateStarOfWork;
+    private LocalDate dateStarOfWork;
 
-    public Seller(int id, TypeOfTradingPoint typeOfTradingPoint,
-                  TradingPoint tradingPoint, String nameOfSeller, double sallary,
-                  Date dateStarOfWork) {
+    public Seller(int id, TradingPoint tradingPoint, String nameOfSeller, double sallary, LocalDate dateStarOfWork) {
         this.id = id;
-        this.typeOfTradingPoint = typeOfTradingPoint;
         this.tradingPoint = tradingPoint;
         this.nameOfSeller = nameOfSeller;
         this.sallary = sallary;
@@ -30,14 +27,6 @@ public class Seller {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public TypeOfTradingPoint getTypeOfTradingPoint() {
-        return typeOfTradingPoint;
-    }
-
-    public void setTypeOfTradingPoint(TypeOfTradingPoint typeOfTradingPoint) {
-        this.typeOfTradingPoint = typeOfTradingPoint;
     }
 
     public TradingPoint getTradingPoint() {
@@ -64,11 +53,11 @@ public class Seller {
         this.sallary = sallary;
     }
 
-    public Date getDateStarOfWork() {
+    public LocalDate getDateStarOfWork() {
         return dateStarOfWork;
     }
 
-    public void setDateStarOfWork(Date dateStarOfWork) {
+    public void setDateStarOfWork(LocalDate dateStarOfWork) {
         this.dateStarOfWork = dateStarOfWork;
     }
 }

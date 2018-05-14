@@ -37,6 +37,7 @@ public class SectionDAOJDBC implements ISectionDAOJDBC{
     @Override
     public Section getSection(int id) throws SQLException {
         ResultSet rs = dataStorage.executeQuery("SELECT * FROM section where id = "+id);
+        rs.next();
         Section section = new Section(rs.getInt("id"), rs.getString("type_of_section"));
         return section;
     }

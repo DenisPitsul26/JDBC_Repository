@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface ISectionOfTradingPointService {
     public SectionOfTradingPoint insertSectionOfTradingPoint(
-            SectionOfTradingPoint sectionOfTradingPoint);
+            SectionOfTradingPoint sectionOfTradingPoint) throws SQLException;
 
-    public SectionOfTradingPoint getSectionOfTradingPoint(int id);
+    public SectionOfTradingPoint getSectionOfTradingPoint(int id) throws SQLException;
 
     public SectionOfTradingPoint updateSectionOfTradingPoint(
             SectionOfTradingPoint sectionOfTradingPoint) throws SQLException;
 
-    public SectionOfTradingPoint deleteSectionOfTradingPoint(int id) throws SQLException;
+    public void deleteSectionOfTradingPoint(int id) throws SQLException;
 
     public List<SectionOfTradingPoint> getAll() throws SQLException;
 }

@@ -16,23 +16,23 @@ public class GoodsOfTradingPointService implements IGoodsOfTradingPointService{
     GoodsOfTradingPointDAOJDBC goodsOfTradingPointDAOJDBC;
 
     @Override
-    public GoodsOfTradingPoint insertGoodsOfTradingPoint(GoodsOfTradingPoint goodsOfTradingPoint) {
-        return null;
+    public GoodsOfTradingPoint insertGoodsOfTradingPoint(GoodsOfTradingPoint goodsOfTradingPoint) throws SQLException {
+        return goodsOfTradingPointDAOJDBC.insertGoodsOfTradingPoint(goodsOfTradingPoint);
     }
 
     @Override
-    public GoodsOfTradingPoint getGoodsOfTradingPoint(int id) {
-        return null;
+    public GoodsOfTradingPoint getGoodsOfTradingPoint(int id) throws SQLException {
+        return goodsOfTradingPointDAOJDBC.getGoodsOfTradingPoint(id);
     }
 
     @Override
     public GoodsOfTradingPoint updateGoodsOfTradingPoint(GoodsOfTradingPoint goodsOfTradingPoint) throws SQLException {
-        return null;
+        return goodsOfTradingPointDAOJDBC.updateGoodsOfTradingPoint(goodsOfTradingPoint);
     }
 
     @Override
-    public GoodsOfTradingPoint deleteGoodsOfTradingPoint(int id) throws SQLException {
-        return null;
+    public void deleteGoodsOfTradingPoint(int id) throws SQLException {
+        goodsOfTradingPointDAOJDBC.deleteGoodsOfTradingPoint(id);
     }
 
     @Override

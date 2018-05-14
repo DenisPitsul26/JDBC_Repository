@@ -16,23 +16,23 @@ public class RequestService implements IRequestService{
     RequestDAOJDBC requestDAOJDBC;
 
     @Override
-    public Request insertRequest(Request request) {
-        return null;
+    public Request insertRequest(Request request) throws SQLException {
+        return requestDAOJDBC.insertRequest(request);
     }
 
     @Override
-    public Request getRequest(int id) {
-        return null;
+    public Request getRequest(int id) throws SQLException {
+        return requestDAOJDBC.getRequest(id);
     }
 
     @Override
     public Request updateRequest(Request request) throws SQLException {
-        return null;
+        return requestDAOJDBC.updateRequest(request);
     }
 
     @Override
-    public Request deleteRequest(int id) throws SQLException {
-        return null;
+    public void deleteRequest(int id) throws SQLException {
+        requestDAOJDBC.deleteRequest(id);
     }
 
     @Override

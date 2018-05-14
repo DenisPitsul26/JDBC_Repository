@@ -34,6 +34,7 @@ public class BuyerDAOJDBC implements IBuyerDAOJDBC{
     @Override
     public Buyer getBuyer(int id) throws SQLException {
         ResultSet rs = dataStorage.executeQuery("SELECT * FROM buyer where id = "+id);
+        rs.next();
         Buyer buyer = new Buyer(rs.getInt("id"), rs.getString("name_of_buyer"));
         return buyer;
     }

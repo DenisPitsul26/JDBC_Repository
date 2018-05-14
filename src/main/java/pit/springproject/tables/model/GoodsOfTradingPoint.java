@@ -2,17 +2,13 @@ package pit.springproject.tables.model;
 
 public class GoodsOfTradingPoint {
     private int id;
-    private TypeOfTradingPoint typeOfTradingPoint;
     private TradingPoint tradingPoint;
     private Goods goods;
     private double price;
     private int numberOfGoods;
 
-    public GoodsOfTradingPoint(int id, TypeOfTradingPoint typeOfTradingPoint,
-                               TradingPoint tradingPoint, Goods goods, double price,
-                               int numberOfGoods) {
+    public GoodsOfTradingPoint(int id, TradingPoint tradingPoint, Goods goods, double price, int numberOfGoods) {
         this.id = id;
-        this.typeOfTradingPoint = typeOfTradingPoint;
         this.tradingPoint = tradingPoint;
         this.goods = goods;
         this.price = price;
@@ -28,14 +24,6 @@ public class GoodsOfTradingPoint {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public TypeOfTradingPoint getTypeOfTradingPoint() {
-        return typeOfTradingPoint;
-    }
-
-    public void setTypeOfTradingPoint(TypeOfTradingPoint typeOfTradingPoint) {
-        this.typeOfTradingPoint = typeOfTradingPoint;
     }
 
     public TradingPoint getTradingPoint() {

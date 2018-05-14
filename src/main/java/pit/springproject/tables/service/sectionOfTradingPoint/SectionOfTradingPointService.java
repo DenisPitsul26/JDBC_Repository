@@ -16,23 +16,23 @@ public class SectionOfTradingPointService implements ISectionOfTradingPointServi
     SectionOfTradingPointDAOJDBC sectionOfTradingPointDAOJDBC;
 
     @Override
-    public SectionOfTradingPoint insertSectionOfTradingPoint(SectionOfTradingPoint sectionOfTradingPoint) {
-        return null;
+    public SectionOfTradingPoint insertSectionOfTradingPoint(SectionOfTradingPoint sectionOfTradingPoint) throws SQLException {
+        return sectionOfTradingPointDAOJDBC.insertSectionOfTradingPoint(sectionOfTradingPoint);
     }
 
     @Override
-    public SectionOfTradingPoint getSectionOfTradingPoint(int id) {
-        return null;
+    public SectionOfTradingPoint getSectionOfTradingPoint(int id) throws SQLException {
+        return sectionOfTradingPointDAOJDBC.getSectionOfTradingPoint(id);
     }
 
     @Override
     public SectionOfTradingPoint updateSectionOfTradingPoint(SectionOfTradingPoint sectionOfTradingPoint) throws SQLException {
-        return null;
+        return sectionOfTradingPointDAOJDBC.updateSectionOfTradingPoint(sectionOfTradingPoint);
     }
 
     @Override
-    public SectionOfTradingPoint deleteSectionOfTradingPoint(int id) throws SQLException {
-        return null;
+    public void deleteSectionOfTradingPoint(int id) throws SQLException {
+        sectionOfTradingPointDAOJDBC.deleteSectionOfTradingPoint(id);
     }
 
     @Override

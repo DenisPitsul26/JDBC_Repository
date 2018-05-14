@@ -16,23 +16,23 @@ public class SellerService implements ISellerService{
     SellerDAOJDBC sellerDAOJDBC;
 
     @Override
-    public Seller insertSeller(Seller seller) {
-        return null;
+    public Seller insertSeller(Seller seller) throws SQLException {
+        return sellerDAOJDBC.insertSeller(seller);
     }
 
     @Override
-    public Seller getSeller(int id) {
-        return null;
+    public Seller getSeller(int id) throws SQLException {
+        return sellerDAOJDBC.getSeller(id);
     }
 
     @Override
     public Seller updateSeller(Seller seller) throws SQLException {
-        return null;
+        return sellerDAOJDBC.updateSeller(seller);
     }
 
     @Override
-    public Seller deleteSeller(int id) throws SQLException {
-        return null;
+    public void deleteSeller(int id) throws SQLException {
+        sellerDAOJDBC.deleteSeller(id);
     }
 
     @Override

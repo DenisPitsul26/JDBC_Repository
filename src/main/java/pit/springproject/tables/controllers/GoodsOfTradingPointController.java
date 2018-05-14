@@ -20,7 +20,7 @@ public class GoodsOfTradingPointController {
     }
 
     @PostMapping("/goods_of_trading_point/insert")
-    GoodsOfTradingPoint insertGoodsOfTradingPoint(@RequestBody GoodsOfTradingPoint goodsOfTradingPoint) {
+    GoodsOfTradingPoint insertGoodsOfTradingPoint(@RequestBody GoodsOfTradingPoint goodsOfTradingPoint) throws SQLException {
         return goodsOfTradingPointService.insertGoodsOfTradingPoint(goodsOfTradingPoint);
     }
 
@@ -31,8 +31,7 @@ public class GoodsOfTradingPointController {
     }
 
     @GetMapping("/goods_of_trading_point/get")
-    GoodsOfTradingPoint getGoodsOfTradingPointById(@RequestParam("id") int id)
-    {
+    GoodsOfTradingPoint getGoodsOfTradingPointById(@RequestParam("id") int id) throws SQLException {
         return goodsOfTradingPointService.getGoodsOfTradingPoint(id);
     }
 

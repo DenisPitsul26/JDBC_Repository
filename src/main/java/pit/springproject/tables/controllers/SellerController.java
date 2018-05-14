@@ -20,7 +20,7 @@ public class SellerController {
     }
 
     @PostMapping("/seller/insert")
-    Seller insertSeller(@RequestBody Seller seller) {
+    Seller insertSeller(@RequestBody Seller seller) throws SQLException {
         return sellerService.insertSeller(seller);
     }
 
@@ -31,8 +31,7 @@ public class SellerController {
     }
 
     @GetMapping("/seller/get")
-    Seller getSellerById(@RequestParam("id") int id)
-    {
+    Seller getSellerById(@RequestParam("id") int id) throws SQLException {
         return sellerService.getSeller(id);
     }
 
