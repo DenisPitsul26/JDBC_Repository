@@ -51,7 +51,7 @@ public class SellerDAOJDBC implements ISellerDAOJDBC{
                         "SELECT * FROM seller " +
                         "JOIN trading_point ON seller.trading_point_id = trading_point.id " +
                         "JOIN type_of_trading_point ON trading_point.type_of_trading_point_id = type_of_trading_point.id "+
-                        "where id = "+id);
+                        "where seller.id = "+id);
         rs.next();
         Seller seller = new Seller(
                 rs.getInt("id"),

@@ -16,23 +16,23 @@ public class SoldGoodsService implements ISoldGoodsService{
     SoldGoodsDAOJDBC soldGoodsDAOJDBC;
 
     @Override
-    public SoldGoods insertSoldGoods(SoldGoods soldGoods) {
-        return null;
+    public SoldGoods insertSoldGoods(SoldGoods soldGoods) throws SQLException {
+        return soldGoodsDAOJDBC.insertSoldGoods(soldGoods);
     }
 
     @Override
-    public SoldGoods getSoldGoods(int id) {
-        return null;
+    public SoldGoods getSoldGoods(int id) throws SQLException {
+        return soldGoodsDAOJDBC.getSoldGoods(id);
     }
 
     @Override
     public SoldGoods updateSoldGoods(SoldGoods soldGoods) throws SQLException {
-        return null;
+        return soldGoodsDAOJDBC.updateSoldGoods(soldGoods);
     }
 
     @Override
-    public SoldGoods deleteSoldGoods(int id) throws SQLException {
-        return null;
+    public void deleteSoldGoods(int id) throws SQLException {
+        soldGoodsDAOJDBC.deleteSoldGoods(id);
     }
 
     @Override

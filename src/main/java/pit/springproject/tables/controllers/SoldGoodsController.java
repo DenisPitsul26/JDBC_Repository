@@ -20,7 +20,7 @@ public class SoldGoodsController {
     }
 
     @PostMapping("/sold_goods/insert")
-    SoldGoods insertSoldGoods(@RequestBody SoldGoods soldGoods) {
+    SoldGoods insertSoldGoods(@RequestBody SoldGoods soldGoods) throws SQLException {
         return soldGoodsService.insertSoldGoods(soldGoods);
     }
 
@@ -31,8 +31,7 @@ public class SoldGoodsController {
     }
 
     @GetMapping("/sold_goods/get")
-    SoldGoods getSoldGoodsById(@RequestParam("id") int id)
-    {
+    SoldGoods getSoldGoodsById(@RequestParam("id") int id) throws SQLException {
         return soldGoodsService.getSoldGoods(id);
     }
 
