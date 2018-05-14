@@ -19,6 +19,7 @@ public class SoldGoodsDAOJDBC implements ISoldGoodsDAOJDBC{
     DataStorageJDBC dataStorage;
     private List<SoldGoods> list = new ArrayList<>();
 
+
     @Override
     public SoldGoods insertSoldGoods(SoldGoods soldGoods) throws SQLException {
         String query = "INSERT INTO `sold_goods` (`trading_point_id`, `seller_id`, " +
